@@ -1,10 +1,10 @@
 /* package */
 const { src, dest, watch, series, parallel } = require("gulp");
 // const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
-const sassGlob = require("gulp-sass-glob");
+const sassGlob = require("gulp-sass-glob-use-forward");
 const mmq = require("gulp-merge-media-queries");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
@@ -61,7 +61,7 @@ const buildServer = (done) => {
 		// 静的サイト
 		// server: { baseDir: "./" },
 		// 動的サイト
-		proxy: "http://localsite.local/",
+		proxy: "http://test.local/",
 		open: true,
 		watchOptions: {
 			debounceDelay: 1000,
